@@ -7,5 +7,9 @@ import React from "react";
 
 //import SingleBanner from "../components/SingleBanner";
 export default function singleroom() {
-  return <></>;
+  return (
+    <>
+      <h1>hello from singleroom</h1>
+    </>
+  );
 }
