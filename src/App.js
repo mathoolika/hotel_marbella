@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import fire from "./config/Fire";
 import Login from "./Login";
-
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
@@ -9,10 +8,8 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
 import Aboutus from "./pages/AboutUs";
-
 import Navbar from "./components/Navbar";
 
-import "./App.css";
 
 class App extends Component {
   constructor(props) {
