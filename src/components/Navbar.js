@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "../images/Logo.png";
 import { FaAlignJustify } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import fire from "../config/Fire";
 
 export default class Navbar extends Component {
   state = {
@@ -10,6 +11,11 @@ export default class Navbar extends Component {
   Togglehandler = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
+
+  logout() {
+    fire.auth().signOut();
+  }
+
   render() {
     return (
       <nav className="navbar">
@@ -37,6 +43,9 @@ export default class Navbar extends Component {
             </li>
             <li>
               <Link to="/aboutus/">About Us</Link>
+            </li>
+            <li>
+              <button name="logout-btn" onClick={this.logout}>Logout</button>
             </li>
           </ul>
         </div>
