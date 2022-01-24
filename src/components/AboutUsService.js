@@ -11,12 +11,12 @@ export default class AboutService extends Component {
       {
         icon: <FaPhoneAlt />,
         title: "Contact us",
-        info: "904-923-6969 or marbella@gmail.com",
+        info: "076 778 73 03 or mathoolika.vasigaran@gmail.com",
       },
       {
         icon: <BsFillPersonFill />,
         title: "Contact",
-        info: "Victoria Gamble",
+        info: "Mathoolika Vasigaran",
       },
       {
         icon: <BsFillHouseDoorFill />,
@@ -28,7 +28,7 @@ export default class AboutService extends Component {
   render() {
     return (
       <section className="service">
-        <Title title="service" />
+        <Title title="Contact Details" />
         <div className="service-center">
           {this.state.service.map((item) => {
             return (

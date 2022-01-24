@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import AboutService from "../components/AboutUsService";
 import Map from "../components/Map";
+import AboutText from "../components/AboutUsText";
 //import Container from "../components/Container";
 
 export default function Aboutus() {
@@ -21,6 +22,7 @@ export default function Aboutus() {
         ></Header>
       </Banner>
       <AboutService />
+      <AboutText />
       <Map />
     </>
   );

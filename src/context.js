@@ -17,8 +17,8 @@ export default class RoomProvider extends Component {
     maxPrice: 0,
     minSize: 0,
     maxSize: 0,
-    breakfast: false,
-    pets: false
+    bedsheets: false,
+    towels: false
   };
 
   componentDidMount() {
@@ -76,8 +76,8 @@ export default class RoomProvider extends Component {
       price,
       minSize,
       maxSize,
-      breakfast,
-      pets
+      bedsheets,
+      towels
     } = this.state;
 
     let tempRooms = [...rooms];
@@ -99,13 +99,13 @@ export default class RoomProvider extends Component {
     tempRooms = tempRooms.filter(
       room => room.size >= minSize && room.size <= maxSize
     );
-    //filter by breakfast
-    if (breakfast) {
-      tempRooms = tempRooms.filter(room => room.breakfast === true);
+    //filter by bedsheets
+    if (bedsheets) {
+      tempRooms = tempRooms.filter(room => room.bedsheets === true);
     }
-    //filter by pets
-    if (pets) {
-      tempRooms = tempRooms.filter(room => room.pets === true);
+    //filter by towels
+    if (towels) {
+      tempRooms = tempRooms.filter(room => room.towels === true);
     }
     this.setState({
       sortedRooms: tempRooms

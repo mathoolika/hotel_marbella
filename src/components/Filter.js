@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { RoomContext } from "../context";
 import Title from "./Title";
 const getUnique = (items, value) => {
-  return [...new Set(items.map(item => item[value]))];
+  return [...new Set(items.map((item) => item[value]))];
 };
 
 const Filter = ({ rooms }) => {
@@ -17,8 +17,8 @@ const Filter = ({ rooms }) => {
     maxPrice,
     minSize,
     maxSize,
-    breakfast,
-    pets
+    towels,
+    bedsheets,
   } = context;
 
   let types = getUnique(rooms, "type");
@@ -98,21 +98,21 @@ const Filter = ({ rooms }) => {
           <div className="single-extra">
             <input
               type="checkbox"
-              name="breakfast"
-              id="breakfast"
-              checked={breakfast}
+              name="bedsheets"
+              id="bedsheets"
+              checked={bedsheets}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">breakfast</label>
+            <label htmlFor="bedsheets">bedsheets</label>
           </div>
           <div className="single-extra">
             <input
               type="checkbox"
-              name="pets"
-              checked={pets}
+              name="towels"
+              checked={towels}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">pets</label>
+            <label htmlFor="towels">towels</label>
           </div>
         </div>
       </form>
