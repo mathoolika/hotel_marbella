@@ -1,12 +1,11 @@
 import React from "react";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
-import Service from "../components/Service";
 import Banner from "../components/Banner";
 import SingleRooms from "../components/SingleRooms";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
-export default function home() {
+export default function Home() {
   return (
     <>
       <Navbar />
@@ -21,7 +20,6 @@ export default function home() {
           }
         ></Header>
       </Banner>
-      <Service />
       <SingleRooms />
     </>
   );

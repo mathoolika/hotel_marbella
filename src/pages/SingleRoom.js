@@ -1,25 +1,22 @@
 import React, { Component } from "react";
-//import defaultBcg from "../images/room-1.jpg";
+import defaultBcg from "../images/room-1.jpg";
 //import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
-
 import SingleBanner from "../components/SingleBanner";
+
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
     console.log(this.props);
-    /*this.state = {
+    this.state = {
       single: this.props.match.params.single,
-      //defaultBcg: defaultBcg
-    };*/
+      defaultBcg
+    };
   }
   static contextType = RoomContext;
 
-   componentDidMount() {
-     console.log(this.props);
-   }
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.single);
@@ -43,7 +40,7 @@ export default class SingleRoom extends Component {
       extras,
       bedsheets,
       towels,
-      images
+      images,
     } = room;
     const [defaultImages] = images;
     console.log(defaultImages);
@@ -76,8 +73,12 @@ export default class SingleRoom extends Component {
                 max capacity :
                 {capacity > 1 ? `${capacity} people` : `${capacity} person`}
               </h6>
-              <h6>{towels ? "towels will be provided" : "towels cost extra"}</h6>
-              <h6>{bedsheets && "bedsheets included"}</h6>
+              <h6>
+                {towels
+                  ? "free towels will be provided"
+                  : "towels will be charged extra"}
+              </h6>
+              <h6>{bedsheets && "free bedsheets will be provided"}</h6>
             </article>
           </div>
         </section>

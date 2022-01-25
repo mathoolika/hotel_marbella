@@ -3,23 +3,23 @@ import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import Container from "../components/Container";
-import Calender from "../components/Calender";
+import Navbar from "../components/Navbar";
 
-export default function rooms() {
+export default function Rooms() {
   return (
     <>
+      <Navbar />
       <Banner banner="roomsBanner">
         <Header
           title="Rooms"
           subtitle="Book your Room Now"
           children={
-            <Link to="/" className="btn-primary">
+            <Link to="/home" className="btn-primary">
               Back to home
             </Link>
           }
         ></Header>
       </Banner>
-      <Calender />
       <Container />
     </>
   );

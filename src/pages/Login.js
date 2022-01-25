@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import fire from "../config/Fire";
+import { ReCaptcha } from "react-recaptcha-google";
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
@@ -11,6 +14,22 @@ class Login extends Component {
       email: "",
       password: "",
     };
+  }
+
+  componentDidMount() {
+    if (this.captchaDemo) {
+      console.log("started, just a second...");
+      this.captchaDemo.reset();
+    }
+  }
+  onLoadRecaptcha() {
+    if (this.captchaDemo) {
+      this.captchaDemo.reset();
+    }
+  }
+  verifyCallback(recaptchaToken) {
+    // Here you will get the final recaptchaToken!!!
+    console.log(recaptchaToken, "<= your recaptcha token");
   }
 
   login(e) {
@@ -40,6 +59,7 @@ class Login extends Component {
 
   render() {
     return (
+      <>
       <div className="col-md-6">
         <form>
           <div class="form-group">
@@ -70,6 +90,17 @@ class Login extends Component {
               placeholder="Password"
             />
           </div>
+          <ReCaptcha
+            ref={(el) => {
+              this.captchaDemo = el;
+            }}
+            size="normal"
+            data-theme="dark"
+            render="explicit"
+            sitekey="6LfrmzceAAAAANNEhFEXwph8JRHBE9AT0V0d7FER"
+            onloadCallback={this.onLoadRecaptcha}
+            verifyCallback={this.verifyCallback}
+          />
           <button type="submit" onClick={this.login} class="btn btn-primary">
             Login
           </button>
@@ -82,6 +113,7 @@ class Login extends Component {
           </button>
         </form>
       </div>
+      </>
     );
   }
 }
