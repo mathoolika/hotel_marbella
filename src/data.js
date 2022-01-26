@@ -25,7 +25,7 @@ const items = [
     },
     fields: {
       name: "Master Ocean View Grand Rooms",
-      single: "MasterOceanViewGrandRooms",
+      single: "Master Ocean View Grand Rooms",
       type: "master",
       price: 500,
       size: 40,

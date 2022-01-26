@@ -14,7 +14,7 @@ const Room = memo(({ room }) => {
           <h6>${price}</h6>
           <p>per night</p>
         </div>
-        <Link to={`/rooms/${single}`} className="btn-primary room-link">
+        <Link to={{pathname: `/rooms/${single}`, single: room}} className="btn-primary room-link">
           features
         </Link>
       </div>

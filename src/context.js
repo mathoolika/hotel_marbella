@@ -50,9 +50,9 @@ export default class RoomProvider extends Component {
     });
     return tempItems;
   }
-  getRoom = slug => {
+  getRoom = single => {
     let tempRooms = [...this.state.rooms];
-    const room = tempRooms.find(room => room.slug === slug);
+    const room = tempRooms.find(room => room.single === single);
     return room;
   };
   handleChange = event => {
